@@ -89,3 +89,6 @@
 
 ;; show matching parens highlighting
 (show-paren-mode 1)
+
+
+(set-face-attribute 'default nil :height 140)
