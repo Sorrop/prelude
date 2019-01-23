@@ -92,3 +92,5 @@
 
 
 (set-face-attribute 'default nil :height 140)
+
+(setq js-indent-level 2)
