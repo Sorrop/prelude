@@ -78,7 +78,9 @@
 (setq cider-repl-display-help-banner nil
       cider-repl-use-pretty-printing t)
 (add-hook 'cider-repl-mode-hook #'eldoc-mode)
-
+(add-hook 'cider-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c C-w") #'cider-eval-last-sexp-and-replace)))
 
 
 ;; Minor modes for lisp development
@@ -90,7 +92,12 @@
 ;; show matching parens highlighting
 (show-paren-mode 1)
 
-
+(set-face-font 'default "Inconsolata")
 (set-face-attribute 'default nil :height 140)
 
+
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".js" string-end) . js2-mode))
+(add-to-list 'auto-mode-alist `(,(rx ".jsx" string-end) . rjsx-mode))
+;;(add-to-list 'auto-mode-alist '("\\.jsx?\\'" . js2-jsx-mode))
 (setq js-indent-level 2)
