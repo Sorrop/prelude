@@ -92,7 +92,6 @@
 ;; show matching parens highlighting
 (show-paren-mode 1)
 
-(set-face-font 'default "Inconsolata")
 (set-face-attribute 'default nil :height 140)
 
 
